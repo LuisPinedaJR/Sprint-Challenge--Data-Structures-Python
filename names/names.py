@@ -1,6 +1,5 @@
 import time
-##from sll import SLL
-from bst import BST
+from bst import BinarySearchTree
 
 
 start_time = time.time()
@@ -24,15 +23,15 @@ duplicates = []  # Return the list of duplicates in this data structure
 #end_time = time.time()
 #print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 #print (f"runtime: {end_time - start_time} seconds")
-bst = BST("")
+bst = BinarySearchTree(names_1[0])
 
-for name in names_1:
+for name in names_1[1:]:
     bst.insert(name)
-
+    
 for name in names_2:
     if bst.contains(name):
         duplicates.append(name)
-
+        
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print(f"runtime: {end_time - start_time} seconds")
